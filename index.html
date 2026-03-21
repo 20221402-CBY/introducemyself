@@ -25,7 +25,60 @@
                 color: #eeeded;
                 font-size: 24px;
                 margin-bottom: 20px;
-                font-weight: lighter;
+                font-weight: lighter;}
+
+            .marquee-wrapper {
+                    overflow: hidden;
+                    width: 100%;
+                    white-space: nowrap;
+                    margin-top: 24px; /* 이름/학과 아래 간격 */}
+
+            .marquee-track {
+                    display: inline-block;
+                    animation: marquee 10s linear infinite;}
+
+            .marquee-text {
+                    display: inline-block;
+                    font-size: 200px;
+                    font-weight: 900;
+                    color: transparent;
+                    -webkit-text-stroke: 2px white;
+                    padding-right: 80px; /* 텍스트 사이 간격 */}
+
+            @keyframes marquee {
+                    0%   { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }}
+
+            .custom-tooltip {
+            position: absolute;/* 얘가 있으면 위에서 마진 조정을 해도 안 움직임 */
+            bottom: calc(100% + -32px); /* 그래서 이 숫자를 낮출수록 내려감 */
+            left: 50%;
+            transform: translateX(-50%);
+            background: #98ff60;
+            color: rgb(0, 0, 0);
+            stroke: 1px rgb(0, 0, 0);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;}
+
+            /* 아래 화살표 */
+            .custom-tooltip::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 5px solid transparent;
+                border-top-color: #98ff60;
+            }
+
+            /* 호버 시 보이게 */
+            div:hover .custom-tooltip {
+                opacity: 1;
             }
         </style>
     </head>
@@ -35,13 +88,22 @@
             <h1>글로벌미디어학부22 최봄이</h1>
             <h2>팀 빌딩을 위한 자기소개</h2>
         </div>
+        <div class="marquee-wrapper" style="margin-left: -128px; margin-top:200px; width: 100vw;">
+            <div class="marquee-track">
+                <!-- 텍스트를 2번 반복해야 끊김 없이 이어져요 -->
+                <span class="marquee-text">Making Teamwork Enjoyable!</span>
+                <span class="marquee-text">Making Teamwork Enjoyable!</span>
+                <span class="marquee-text">Making Teamwork Enjoyable!</span>
+                <span class="marquee-text">Making Teamwork Enjoyable!</span>
+            </div>
+        </div>
 
         <div class="background" style="margin-top: 600px;">
             <h1 style="font-size: 48px;">Background</h1>
         </div>
 
-        <div class="list" style="margin-top: 120px; margin-left:128px">
-            <h1>1. 플레이버</h1>
+        <div class="list1" style="margin-top: 120px; margin-left:128px">
+            <h1 style="display: inline-block; margin-bottom:36px;">1. 플레이버 (댄스동아리)</h1>
             <h2>서울 대학의 댄스 동아리들이 다인원퍼포먼스를 하는 유니온에서 20여명의 무대를 구성한 경험이 있습니다.</h2>
             <h2>저의.... 통솔력? 리더십? 예술적?음 뭐 아무튼 그런거를 보여줄 수 있는 경험인 거 같아 넣어봤습니다 ^.^</h2>
             <a href="https://youtu.be/l7LCNBKlTTI?si=fnbthRK_pfziQHO0" class="btn btn-primary btn-lg" style="margin-top: 20px; background: linear-gradient(to right, #fefcff, #e4c5ff); border: none; color:#070707" target="_blank" rel="noopener noreferrer">유튜브 보러가기 <i class="bi bi-arrow-right"></i></a>
@@ -86,9 +148,211 @@
             </div>
         </div>
 
-        
+        <div class="list2" style="margin-top: 120px; margin-left:128px">
+            <h1 style="display: inline-block; margin-bottom:36px;">2. 마케팅 대외활동</h1>
+            <h2>1, 2학년 때는 산업공학과지만 이런 마케팅에 관심이 많아서</h2>
+            <h2>무신사CQR pre editor, 록시땅 시어캠퍼스 같은 대외활동들을 했었습니다.</h2>
+            <h2 style="display: inline-block; margin-top:24px;">브랜드의 미감과 영상을 Align시키기 위해 어떤 방식으로 편집, 촬영과정에 녹여낼 수 있는지에 대해 여러가지 방법을 탐색해 볼 수 있었고</h2>
+            <h2>다소 지루한 주제가 될 수 있는 컨텐츠를 어떻게 하면 흥미 있게 끝까지 볼까에 대해서도 많이 고민해본 시간이었습니다.</h2>
 
+        <div style="position: relative; display: inline-block; margin-top: 20px;">
+  
+        <!-- 툴팁 -->
+        <div class="custom-tooltip">맞팔 환영해요! 👋</div>
+
+            <a href="https://www.instagram.com/reels/CurKahbg4kKBohPtbbzImEIAcGu09CiCDm9IX00/" 
+                class="btn btn-primary btn-lg" 
+                style="margin-top: 48px; background: linear-gradient(to right, #fefcff, #e4c5ff); border: none; color:#070707"
+                target="_blank">
+                릴스 보러가기 <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+            
+            <!--<a href="https://www.instagram.com/reels/CurKahbg4kKBohPtbbzImEIAcGu09CiCDm9IX00/" 
+                class="btn btn-primary btn-lg" 
+                style="margin-top: 20px; background: linear-gradient(to right, #fefcff, #e4c5ff); border: none; color:#070707"
+                target="_blank" 
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="맞팔 환영해요!"
+                title="맞팔 환영해요!">
+                릴스 보러가기 <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>-->
+        
+        <style>
+            .sticky-wrap {
+                position: relative;
+                height: 400vh;
+            }
+            .sticky-inner {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .card-stack {
+                position: relative;
+                width: 560px;
+                height: 760px;
+            }
+            .s-card {
+                position: absolute;
+                inset: 0;
+                border-radius: 20px;
+                overflow: hidden;
+                border: 2px solid rgba(255, 255, 255, 0.5);
+                will-change: transform, opacity;
+                transition: transform 1s linear, opacity 1s linear;
+            }
+            .s-card img {
+                width: 100%; height: 100%;
+                object-fit: cover;
+                display: block;
+                pointer-events: none;
+            }
+            .s-card .meta {
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                padding: 16px;
+                background: linear-gradient(transparent, rgba(0,0,0,0.6));
+                color: #fff;
+            }
+            .s-card .meta .tag {
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                opacity: 0.7;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+            .s-card .meta .title {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .progress-dots {
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                    gap: 8px;
+                }
+                .dot {
+                    width: 6px; height: 6px;
+                    border-radius: 50%;
+                    background: rgba(0,0,0,0.3);
+                    transition: background-color 1s, transform 1s;
+                }
+                .dot.active {
+                    background: #000;
+                    transform: scale(1.4);
+                }
+                .scroll-hint {
+                    position: absolute;
+                    bottom: 3.5rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 12px;
+                    color: #666;
+                    letter-spacing: 0.05em;
+                    opacity: 1;
+                    transition: opacity 0.4s;
+                }
+                .scroll-hint.hidden { opacity: 0; }
+        </style>
+
+        <div class="sticky-wrap" id="stickyWrap">
+            <div class="sticky-inner" id="stickyInner">
+                <div class="card-stack" id="cardStack"></div>
+                <div class="progress-dots" id="dots"></div>
+                <div class="scroll-hint" id="hint">↓ 스크롤해보세요</div>
+            </div>
+        </div>
         <!-- Bootstrap 5 JS Bundle (includes Popper) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            const cards = [
+                { img: "images/무신사1.png", tag: "마케팅 대외활동", title: "무신사 CQR" },
+                { img: "images/무신사2.png", tag: "마케팅 대외활동", title: "무신사 CQR" },
+                { img: "images/무신사3.png", tag: "마케팅 대외활동", title: "무신사 CQR" },
+                { img: "images/록시땅1.png", tag: "마케팅 대외활동", title: "록시땅 시어캠퍼스" },
+                { img: "images/록시땅2.png", tag: "마케팅 대외활동", title: "록시땅 시어캠퍼스" },
+                { img: "images/록시땅3.png", tag: "마케팅 대외활동", title: "록시땅 시어캠퍼스" },
+                { img: "images/록시땅4.png", tag: "마케팅 대외활동", title: "록시땅 시어캠퍼스" }
+            ];
+
+            const stack = document.getElementById('cardStack');
+            const dotsEl = document.getElementById('dots');
+            const hint = document.getElementById('hint');
+
+            cards.forEach((c, i) => {
+                const el = document.createElement('div');
+                el.className = 's-card';
+                el.innerHTML = `<img src="${c.img}" /><div class="meta"><div class="tag">${c.tag}</div><div class="title">${c.title}</div></div>`;
+                el.style.zIndex = cards.length - i;
+                stack.appendChild(el);
+
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dotsEl.appendChild(dot);
+            });
+
+            const cardEls = stack.querySelectorAll('.s-card');
+            const dotEls = dotsEl.querySelectorAll('.dot');
+
+            function lerp(a, b, t) { return a + (b - a) * t; }
+
+            function update() {
+                const wrap = document.getElementById('stickyWrap');
+                const rect = wrap.getBoundingClientRect();
+                const scrolled = -rect.top;
+                const total = rect.height - window.innerHeight;
+                const progress = Math.max(0, Math.min(1, scrolled / total));
+
+                const step = 1 / cards.length;
+                const activeIdx = Math.min(Math.floor(progress / step), cards.length - 1);
+
+                if (progress > 0.02) hint.classList.add('hidden');
+                else hint.classList.remove('hidden');
+
+                dotEls.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+
+                cardEls.forEach((el, i) => {
+                    const cardProgress = Math.max(0, Math.min(1, (progress - i * step) / step));
+                    if (i < activeIdx) {
+                        el.style.transform = `rotate(${(i - activeIdx) * 3}deg) translateY(${(i - activeIdx) * 8}px) scale(0.88)`;
+                        el.style.opacity = 0.4;
+                        el.style.zIndex = i;
+                    } else if (i === activeIdx) {
+                        const ease = 1 - Math.pow(1 - cardProgress, 3);
+                        const rot = lerp(-15, 0, ease);
+                        const scale = lerp(0.82, 1, ease);
+                        const ty = lerp(60, 0, ease);
+                        el.style.transform = `rotate(${rot}deg) translateY(${ty}px) scale(${scale})`;
+                        el.style.opacity = lerp(0, 1, ease);
+                        el.style.zIndex = cards.length + 1;
+                    } else {
+                        const behindOffset = (i - activeIdx);
+                        el.style.transform = `rotate(${behindOffset * 4}deg) translateY(${behindOffset * 10}px) scale(${1 - behindOffset * 0.05})`;
+                        el.style.opacity = Math.max(0, 1 - behindOffset * 0.3);
+                        el.style.zIndex = cards.length - i;
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+        </script>
+        
+
+
     </body>
 </html>
